@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "adfocus TAG Tool",
+  "description": "This extension can be used to check adfocus technology integrations",
+  "version": "1.2.3",
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": "/images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webRequest",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": ["https://*.getback.ch/"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "blocking_rules",
+        "enabled": false,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/js/jquery.min.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
