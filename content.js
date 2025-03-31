@@ -20,7 +20,7 @@ var requestScriptInjection = function () {
 };
 
 // Run on page load
-jQuery(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function() {
     getSettings(() => {
         requestScriptInjection();
     });

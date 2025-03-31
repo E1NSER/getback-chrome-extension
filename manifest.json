@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "adfocus TAG Tool",
   "description": "This extension can be used to check adfocus technology integrations",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "icons": {
     "128": "icon.png"
   },
@@ -26,7 +26,6 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "/js/jquery.min.js",
         "content.js"
       ],
       "run_at": "document_start"
